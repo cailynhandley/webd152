@@ -181,14 +181,14 @@ tr:nth-of-type(odd) {
   background-color: #ffcd6f;
 }
 form {
-  display: flex;  
-  flex-direction: column; 
-  gap: 1rem; 
-  max-width: 32em; 
-  margin: 0 auto; 
- padding: 2em 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 32em;
+  margin: 0 auto;
+  padding: 2em 1em;
   background-color: #f8fafc;
-  border-radius: 0.5em; 
+  border-radius: 0.5em;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 label {
@@ -196,8 +196,9 @@ label {
   margin-bottom: 0.25em;
   color: #003;
 }
-input, textarea {
-  margin-bottom: 0; 
+input,
+textarea {
+  margin-bottom: 0;
   padding: 0.5em;
   border: 1px solid #b0bec5;
   border-radius: 0.25em;
@@ -207,8 +208,9 @@ input, textarea {
 }
 input:focus,
 textarea:focus {
-  border-color: #003
-  outline: none;}
+  border-color: #003;
+  outline: none;
+}
 
 input[type="submit"] {
   background-color: #003;
@@ -221,9 +223,9 @@ input[type="submit"] {
   cursor: pointer;
   transition: background 0.2s;
 }
-input[type="submit"]: hover,
-input[type="submit"]: focus {
-  background-color: #003; 
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #003;
 }
 .center {
   display: flex;
@@ -235,51 +237,54 @@ input[type="submit"]: focus {
   gap: 0.5em;
 }
 .center > h2,
-.center > h3, 
+.center > h3,
 .center > p {
   margin: 0;
 }
-/* flex container for main content row */ 
+/* flex container for main content row */
 .content-row {
   display: flex;
-  font-weight: wrap;
+  flex-wrap: wrap;
   gap: 2em;
   align-items: flex-start;
   margin-bottom: 2em;
 }
-/* video styling */ 
+/* video styling */
 .content-row video {
   flex: 0 0 320px;
   margin: 2em;
   max-width: 100%;
   border-radius: 0.5em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* text content styling */ 
-.text-content{
+/* text content styling */
+.text-content {
   flex: 1;
   min-width: 250px;
-
 }
 
 /* Gallery Grid Layout */
 .gallery {
   display: grid;
   gap: 1em;
-  grid-template-columns: repeat (1, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   margin: 2em 0;
 }
 
-/* Gallery Image Container */ 
+/* Gallery Image Container */
 .gallery-image {
   position: relative;
   overflow: hidden;
   border-radius: 0.5em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   background: #fff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Images */
@@ -303,11 +308,13 @@ input[type="submit"]: focus {
   font-size: 0.9rem;
   text-align: center;
   overflow: 0;
-  transition: opacity 0.3s ease, transform 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
   transform: translateY(20%);
 }
 
-/* Hover effect for gallery images */ 
+/* Hover effect for gallery images */
 .gallery-image:hover figcaption {
   opacity: 1;
   transform: translateY(0);
@@ -325,8 +332,7 @@ input[type="submit"]: focus {
   }
 }
 
-
-/* responsive design for video content */ 
+/* responsive design for video content */
 @media (max-width: 700px) {
   .content-row {
     flex-direction: column;
@@ -407,20 +413,19 @@ input[type="submit"]: focus {
     white-space: nowrap;
   }
   form {
-  max-width: 100%;
-  padding: 1em;
+    max-width: 100%;
+    padding: 1em;
   }
-  form label, 
+  form label,
   form input,
   form textarea {
-  width: 100%;
-}
-  input [type= "submit"] {
+    width: 100%;
+  }
+  input[type="submit"] {
     width: 100%;
     margin-top: 0.5em;
   }
 }
-
 
 @media (min-width: 37.5rem) {
   nav ul {
