@@ -63,6 +63,7 @@ nav li {
 }
 nav a {
   text-decoration: none; /* txd */
+  transition: color 3s ease-out;
 }
 nav a:link {
   color: #5c7fa3;
@@ -114,7 +115,9 @@ footer {
 }
 #homehero,
 #yurthero,
-#trailhero {
+#trailhero,
+#reservations-hero,
+#abouthero {
   background-repeat: no-repeat; /* bgr */
   background-size: cover;
   height: 18.75rem;
@@ -127,6 +130,13 @@ footer {
 }
 #trailhero {
   background-image: url(images/trail.jpg);
+}
+#reservations-hero {
+  background-image: url(images/reservations.jpg);
+}
+#abouthero {
+  background-image: url(images/abouthero.jpg);
+  background-position: center;
 }
 .card-row {
   display: flex;
@@ -174,6 +184,191 @@ td {
 }
 tr:nth-of-type(odd) {
   background-color: #ffcd6f;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 32em;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background-color: #f8fafc;
+  border-radius: 0.5em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+label {
+  font-weight: 600;
+  margin-bottom: 0.25em;
+  color: #003;
+}
+input,
+textarea {
+  margin-bottom: 0;
+  padding: 0.5em;
+  border: 1px solid #b0bec5;
+  border-radius: 0.25em;
+  font-size: 1em;
+  background: #fff;
+  transition: border-color 0.2s ease-in-out;
+}
+input:focus,
+textarea:focus {
+  border-color: #003;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: #003;
+  color: #fff;
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.75em 2em;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+  background-color: #003;
+}
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 2em 0;
+  gap: 0.5em;
+}
+.center > h2,
+.center > h3,
+.center > p {
+  margin: 0;
+}
+/* flex container for main content row */
+.content-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  align-items: flex-start;
+  margin-bottom: 2em;
+}
+/* video styling */
+.content-row video {
+  flex: 0 0 320px;
+  margin: 2em;
+  max-width: 100%;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition:
+    0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* text content styling */
+.text-content {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Gallery Grid Layout */
+.gallery {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 2em 0;
+}
+
+/* Gallery Image Container */
+.gallery-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: #fff;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Images */
+.gallery-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* Figcaption Overlay */
+.gallery-image figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  padding: 0.5em;
+  font-size: 0.9rem;
+  text-align: center;
+  overflow: hidden;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: translateY(20%);
+}
+
+/* Hover effect for gallery images */
+.gallery-image:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2em;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.about-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+@media (min-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* responsive design for video content */
+@media (max-width: 700px) {
+  .content-row {
+    flex-direction: column;
+  }
+  .content-row video {
+    margin: 1em auto;
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 32.5rem) {
@@ -244,7 +439,21 @@ tr:nth-of-type(odd) {
     font-weight: bold;
     white-space: nowrap;
   }
+  form {
+    max-width: 100%;
+    padding: 1em;
+  }
+  form label,
+  form input,
+  form textarea {
+    width: 100%;
+  }
+  input[type="submit"] {
+    width: 100%;
+    margin-top: 0.5em;
+  }
 }
+
 @media (min-width: 37.5rem) {
   nav ul {
     flex-direction: row;
